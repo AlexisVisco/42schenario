@@ -1,6 +1,7 @@
 #
 # FORK AND EXCVE PART
 #
+>> wait 500
 nm -u 42sh
 ./42sh
 >> wait 500
@@ -31,6 +32,7 @@ cd -
 #
 # ENV
 #
+>> wait 1500
 env
 setenv FOO=bar
 env | grep FOO
@@ -46,6 +48,7 @@ env
 #
 # GESTION LIGNE COMMAND
 #
+>> wait 1500
     %
 >> keys ENTER
          %
@@ -62,6 +65,7 @@ f fu 2g
 #
 # PIPE
 #
+>> wait 1500
 ls | cat -e
 ls | sort | cat -e
 base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
@@ -80,6 +84,7 @@ wc -c < /tmp/test.txt
 #
 # LOGICAL OPERATORS
 #
+>> wait 1500
 ls -l && ls
 ls something || ls
 ls || ls something
@@ -87,18 +92,21 @@ ls || ls something
 #
 # SEPARATOR
 #
+>> wait 1500
 ls -1; touch test_file; ls -1
 rm test_file
 
 #
 # BIG TESTS
 #
+>> wait 1500
 mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
 cd .. && rm -rf test
 
 #
 # HEREDOC
 #
+>> wait 1500
 cd /tmp; sort << EOF | cat -e > sorted_poem ; sed -e 's/Roses/Turnips/' < sorted_poem > better_poem; cd -; echo "I prefer turnips anyway" >> /tmp/better_poem; cat /tmp/better_poem
 Roses are red
 Violets are blue
@@ -109,6 +117,7 @@ EOF
 #
 # Inhibiteurs
 #
+>> wait 1500
 echo "
 hello world"
 echo '
@@ -119,6 +128,7 @@ ls \
 #
 # AGREGATOR
 #
+>> wait 1500
 rm nosuchfile 2>&-
 rm nosuchfile 2>&1 | cat -e
 echo "No dollar character" 1>&2 | cat -e
@@ -126,6 +136,7 @@ echo "No dollar character" 1>&2 | cat -e
 #
 # LINE EDITING
 #
+>> wait 1500
 >> setDelay 35
 hello world%
 >> repeat 5 LEFT
@@ -155,7 +166,7 @@ hello world%
 #
 # LOCAL VARIABLES
 #
->> wait 500
+>> wait 1500
 test=123
 variables
 typeof test
@@ -179,12 +190,14 @@ env
 #
 # BACKQUOTES
 #
+>> wait 1500
 echo `ls -l`
 echo `ls`
 
 #
 # HISTORY BUILTIN
 #
+>> wait 1500
 !!
 >> keys CTRL,u
 !-0
@@ -197,6 +210,7 @@ echo `ls`
 #
 # AUTOCOMPLETION
 #
+>> wait 1500
 >> setDelay 30
 pyth%
 >> keys TAB
@@ -214,3 +228,4 @@ pyth%
 >> keys CTRL,u
 >> keys ENTER
 >> setDelay 5
+exit
