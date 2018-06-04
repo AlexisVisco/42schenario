@@ -40,8 +40,7 @@ public class Driver {
     public void enter() {
         doType(VK_ENTER);
         try {
-            if (demo) Thread.sleep(700);
-            else Thread.sleep(800);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

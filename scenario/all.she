@@ -15,8 +15,8 @@ foo
 #
 exit
 >> wait 1500
-valgrind --leak-check=full --show-leak-kinds=all --log-file="valgrind.out" ./42sh
->> wait 1500
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
 echo It works
 cd /tmp
 /bin/pwd
