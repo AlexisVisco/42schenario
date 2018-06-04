@@ -1,0 +1,8 @@
+#
+# BACKQUOTES
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+echo `ls -l`
+echo `ls`
+exit

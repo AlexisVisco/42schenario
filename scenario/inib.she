@@ -1,0 +1,13 @@
+#
+# Inhibiteurs
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+echo "
+hello world"
+echo '
+hello planet'
+ls && \
+echo "hoy" \
+&& echo "hello 42sh"
+exit

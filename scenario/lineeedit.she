@@ -1,0 +1,31 @@
+#
+# LINE EDITING
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+>> setDelay 35
+hello world%
+>> repeat 5 LEFT
+ and after 'hello' this is %
+>> repeat 5 RIGHT
+>> keys CTRL,a
+>> wait 1000
+>> keys CTRL,e
+>> keys CTRL,u
+>> keys UP
+>> wait 1000
+>> keys UP
+>> wait 1000
+>> keys UP
+>> wait 1000
+>> keys DOWN
+>> wait 1000
+>> keys DOWN
+>> wait 1000
+>> keys DOWN
+>> wait 1000
+>> keys DOWN
+>> keys CTRL,u
+>> setDelay 5
+# cant copy/paste because visual selection with mouse is required
+exit

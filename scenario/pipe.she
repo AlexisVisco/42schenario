@@ -1,0 +1,11 @@
+#
+# PIPE
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+ls | cat -e
+ls | sort | cat -e
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
+exit

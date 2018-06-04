@@ -1,0 +1,25 @@
+#
+# LOCAL VARIABLES
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+test=123
+variables
+typeof test
+export test
+env | grep test
+>> wait 500
+test_add=$test+18
+typeof test_add
+variables
+unset test_add
+>> wait 500
+new="Hello world"
+typeof new
+export new
+env | grep new
+>> wait 500
+env
+
+/usr/bin/env
+exit

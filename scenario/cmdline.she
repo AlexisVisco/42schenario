@@ -1,0 +1,19 @@
+#
+# GESTION LIGNE COMMAND
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+>> wait 1500
+    %
+>> keys ENTER
+         %
+>> keys ENTER
+;;; || ''
+::
+hjcbwshoifuveybe8f32r76t362u7edjkssd
+f fu 2g
+       ls
+'ls'
+"ls"
+"l"s
+exit

@@ -1,0 +1,23 @@
+#
+# AUTOCOMPLETION
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+>> setDelay 30
+pyth%
+>> keys TAB
+  src/%
+>> keys TAB
+/%
+>> keys TAB
+ || ph%
+>> keys TAB
+>> keys TAB
+>> keys TAB
+ ~/%
+>> keys TAB
+>> wait 1500
+>> keys CTRL,u
+>> keys ENTER
+>> setDelay 5
+exit

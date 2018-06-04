@@ -1,0 +1,14 @@
+#
+# HISTORY BUILTIN
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+!!
+>> keys CTRL,u
+!-0
+>> keys CTRL,u
+!3
+>> keys CTRL,u
+!?echo
+>> keys CTRL,u
+exit

@@ -1,0 +1,11 @@
+#
+# REDIRECTION
+#
+valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> wait 5000
+echo "Testing redirections," > /tmp/test.txt
+cat /tmp/test.txt
+echo "with multiple lines" >> /tmp/test.txt
+cat /tmp/test.txt
+wc -c < /tmp/test.txt
+exit
