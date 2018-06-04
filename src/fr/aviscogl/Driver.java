@@ -13,7 +13,7 @@ import static java.awt.event.KeyEvent.*;
 public class Driver {
 
     private Robot robot;
-    private boolean demo = false;
+    private int delayEnter = 800;
 
     public Driver() throws AWTException {
         this.robot = new Robot();
@@ -40,15 +40,10 @@ public class Driver {
     public void enter() {
         doType(VK_ENTER);
         try {
-            Thread.sleep(1000);
+            Thread.sleep(delayEnter);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public void setDemo(boolean demo) {
-        this.demo = demo;
-        robot.setAutoDelay(30);
     }
 
     public void setDelay(int delay) {
@@ -337,5 +332,9 @@ public class Driver {
             keyslist = keysList.toArray(keyslist);
             doType(keyslist, 0, keyslist.length);
         }
+    }
+
+    public void setDelayEnter(int delayEnter) {
+        this.delayEnter = delayEnter;
     }
 }
