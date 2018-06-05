@@ -1,6 +1,6 @@
 >> launched = true
 >> can_exit = false
->> {valgrind} == true ? valgrind --leak-check=full --show-leak-kinds=all ./42sh : ./42.sh
+>> {valgrind} == true ? valgrind --leak-check=full --show-leak-kinds=all ./42sh : ./42sh
 >> import aggregation.she
 >> import auto_completion.she
 >> import auto_completion.she
