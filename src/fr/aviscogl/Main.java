@@ -44,6 +44,7 @@ public class Main {
         Instruction.registerInstruction(new Wait());
         Instruction.registerInstruction(new EnterOrNot());
         Instruction.registerInstruction(new Comment());
+        Instruction.registerInstruction(new Print());
     }
 }
 
