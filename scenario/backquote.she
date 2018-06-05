@@ -4,5 +4,11 @@
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : wait 5000
 echo `ls -l`
-echo `ls`
+`echo caca` prout
+`echo ls`
+`touch t` `rm t`
+`touch t` `rm t ` ls -la
+`echo `echo ls``
+`rm t || echo ls`
+`rm t && echo ls`
 >> {can_exit} == true ? exit : _
