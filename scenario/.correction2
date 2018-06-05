@@ -1,0 +1,61 @@
+#
+# Gestion de la ligne de commande
+#
+echo "Gestion de la ligne de commande \n"
+./42sh
+>> wait 2000
+
+ %
+
+                                  %
+
+
+                          ls                      -l             -a
+exit
+>> wait 3200
+
+#
+# Pipe
+#
+echo "Pipe \n"
+./42sh
+>> wait 2000
+ls | cat -e
+ls | sort | cat -e
+base64 /dev/urandom | head -c 1000
+ base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+exit
+
+>> wait 3200
+#
+# Testing redirections
+#
+echo "Redirections simple \n"
+
+./42sh
+>> wait 2000
+echo "Testing redirections," > /tmp/test.txt
+echo "with multiple lines" >> /tmp/test.txt
+wc -c < /tmp/test.txt
+exit 456
+
+>> wait 3200
+#
+# Operateurs logiques
+#
+echo "Operateurs logiques \n"
+
+./42sh
+>> wait 2000
+ls -l && ls
+ls something || ls
+ls || ls something
+
+ls -1; touch test_file; ls -1
+rm test_file
+
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+cd .. ; rm -fr test
+exit

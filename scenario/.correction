@@ -1,0 +1,54 @@
+#
+# Fork et execve
+#
+echo "C'est parti ! \n"
+./42sh
+>> wait 2000
+foo
+/bin/ls
+/bin/ls -laF
+/bin/ls -l -a -F
+exit
+
+>> wait 32000
+#
+#
+# Les builtins
+#
+#
+echo "On passe maintenant aux builtins ! \n"
+./42sh
+>> wait 2000
+echo It works
+cd /Users/ggranjon
+cd Documents
+cd
+/bin/pwd
+cd -
+/bin/pwd
+exit
+
+>> wait 52000
+#
+#
+# La gestion de l'environnement
+#
+#
+echo "On passe maintenant a la gestion de l'environnement ! \n"
+./42sh
+>> wait 2000
+env
+setenv FOO=bar
+/usr/bin/env | grep FOO
+unsetenv FOO
+env | grep FOO
+unsetenv FOO
+env
+exit
+>> wait 52000
+#
+#
+# La gestion de l'environnement
+#
+#
+echo "Cette partie est a faire a la main ! \n"
