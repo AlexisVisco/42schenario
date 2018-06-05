@@ -1,3 +1,9 @@
+## How to launch
+
+`java -jar 42schenario.jar <text files>`
+
+You can pass option with java: `-Dvalgrind=true`
+
 ## List of instructions
 
 | Syntax        | Description  |        
@@ -12,12 +18,6 @@
 | >> `<text>` == `<text>` ? `<text>` : `<text>` | Check the condition equality between two first text and execute the ternary |
 | >> `<text>` = `<text>`| Create a variable |
 | >> wait `<number>` | Wait X milliseconds |
-
-## How to launch
-
-`java -jar 42schenario.jar <text files>`
-
-You can pass option with java: `-Dvalgrind=true`
 
 ## Keys available for `>> keys <list of keys to type with a ,>`
 
