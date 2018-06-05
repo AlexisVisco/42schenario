@@ -28,7 +28,7 @@ base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/
 base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
 exit
 
->> wait 3200
+>> wait 32000
 #
 # Testing redirections
 #
@@ -41,7 +41,7 @@ echo "with multiple lines" >> /tmp/test.txt
 wc -c < /tmp/test.txt
 exit 456
 
->> wait 3200
+>> wait 32000
 #
 # Operateurs logiques
 #
