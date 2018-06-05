@@ -1,8 +1,0 @@
-#
-# BIG TESTS
-#
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
-mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
-cd .. && rm -rf test
-exit

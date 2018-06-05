@@ -1,8 +1,8 @@
 #
 # BACKQUOTES
 #
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : wait 5000
 echo `ls -l`
 echo `ls`
-exit
+>> {can_exit} == true ? exit : _

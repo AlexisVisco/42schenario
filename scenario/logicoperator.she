@@ -1,9 +1,0 @@
-#
-# LOGICAL OPERATORS
-#
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
-ls -l && ls
-ls something || ls
-ls || ls something
-exit

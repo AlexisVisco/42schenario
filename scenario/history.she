@@ -1,8 +1,8 @@
 #
 # HISTORY BUILTIN
 #
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : wait 5000
 !!
 >> keys CTRL,u
 !-0
@@ -11,4 +11,4 @@ valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> keys CTRL,u
 !?echo
 >> keys CTRL,u
-exit
+>> {can_exit} == true ? exit : _

@@ -1,8 +1,8 @@
 #
 # SEPARATOR
 #
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : wait 5000
 ls -1; touch test_file; ls -1
 rm test_file
-exit
+>> {can_exit} == true ? exit : _

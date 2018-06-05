@@ -1,9 +1,0 @@
-#
-# AGREGATOR
-#
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
-rm nosuchfile 2>&-
-rm nosuchfile 2>&1 | cat -e
-echo "No dollar character" 1>&2 | cat -e
-exit

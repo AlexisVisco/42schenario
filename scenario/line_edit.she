@@ -1,8 +1,8 @@
 #
 # LINE EDITING
 #
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : wait 5000
 >> setDelay 35
 hello world%
 >> repeat 5 LEFT
@@ -28,4 +28,4 @@ hello world%
 >> keys CTRL,u
 >> setDelay 5
 # cant copy/paste because visual selection with mouse is required
-exit
+>> {can_exit} == true ? exit : _

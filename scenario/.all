@@ -1,0 +1,22 @@
+>> launched = true
+>> can_exit = false
+>> {valgrind} == true ? valgrind --leak-check=full --show-leak-kinds=all ./42sh : ./42.sh
+>> import aggregation.she
+>> import auto_completion.she
+>> import auto_completion.she
+>> import backquote.she
+>> import big_test.she
+>> import builtins.she
+>> import manage_line.she
+>> import env.she
+>> import heredoc.she
+>> import history.she
+>> import inib.she
+>> import line_edit.she
+>> import logical_operators.she
+>> import pipe.she
+>> import redir.she
+>> import separator.she
+>> import variables.she
+
+exit

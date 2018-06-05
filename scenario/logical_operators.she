@@ -1,17 +1,9 @@
 #
-# BUILTINS PART
+# LOGICAL OPERATORS
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : wait 5000
-echo It works
-cd /tmp
-/bin/pwd
-cd -
-/bin/pwd
-cd src
-/bin/pwd
-cd ..
-cd
-/bin/pwd
-cd -
+ls -l && ls
+ls something || ls
+ls || ls something
 >> {can_exit} == true ? exit : _

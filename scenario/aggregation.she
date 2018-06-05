@@ -1,17 +1,9 @@
 #
-# BUILTINS PART
+# AGREGATOR
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : wait 5000
-echo It works
-cd /tmp
-/bin/pwd
-cd -
-/bin/pwd
-cd src
-/bin/pwd
-cd ..
-cd
-/bin/pwd
-cd -
+rm nosuchfile 2>&-
+rm nosuchfile 2>&1 | cat -e
+echo "No dollar character" 1>&2 | cat -e
 >> {can_exit} == true ? exit : _

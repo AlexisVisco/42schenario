@@ -6,32 +6,35 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class VirtualFile {
 
-    private int line = 0;
-    private List<String> file = new ArrayList<>();
+    private Deque<String> file = new ArrayDeque<>();
+    private String parentPath;
 
     public VirtualFile(File f) throws IOException {
         if (f.exists()) {
-            this.file = Files.readAllLines(Paths.get(f.getAbsolutePath()));
-        } else System.exit(1);
+            this.parentPath = f.getParent();
+            file.addAll(Files.readAllLines(Paths.get(f.getAbsolutePath())));
+        }
+        else {
+            System.err.printf("42Schenario > File %s does not exist.\n", f.getAbsolutePath());
+            System.exit(1);
+        }
     }
 
-    public void readNextLine() {
-
+    public String readNextLine() {
+        return file.pollFirst();
     }
 
-    public void insertFileAt(File f) throws IOException {
-        if (f.exists()) {
-            List<String> lines = Files.readAllLines(Paths.get(f.getAbsolutePath()));
-            file.addAll(line, lines);
+    public void insertFileAt(String path) throws IOException {
+        File file = new File(Paths.get(parentPath, path).toString());
+        if (file.exists() || (file = new File(path)).exists()) {
+            List<String> lines = Files.readAllLines(Paths.get(file.getAbsolutePath()));
+            Collections.reverse(lines);
+            for (String s : lines)
+                this.file.addFirst(s);
         } else throw new FileNotFoundException();
-    }
-
-    public int getLine() {
-        return line;
     }
 }

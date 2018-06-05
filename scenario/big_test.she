@@ -1,17 +1,8 @@
 #
-# BUILTINS PART
+# BIG TESTS
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : wait 5000
-echo It works
-cd /tmp
-/bin/pwd
-cd -
-/bin/pwd
-cd src
-/bin/pwd
-cd ..
-cd
-/bin/pwd
-cd -
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+cd .. && rm -rf test
 >> {can_exit} == true ? exit : _

@@ -1,8 +1,8 @@
 #
 # AUTOCOMPLETION
 #
-valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> wait 5000
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : wait 5000
 >> setDelay 30
 pyth%
 >> keys TAB
@@ -20,4 +20,4 @@ pyth%
 >> keys CTRL,u
 >> keys ENTER
 >> setDelay 5
-exit
+>> {can_exit} == true ? exit : _
