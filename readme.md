@@ -18,6 +18,7 @@ You can pass option with java: `-Dvalgrind=true`
 | >> `<text>` == `<text>` ? `<text>` : `<text>` | Check the condition equality between two first text and execute the ternary |
 | >> `<text>` = `<text>`| Create a variable |
 | >> wait `<number>` | Wait X milliseconds |
+| >> print `<text>` | Print text |
 
 ## Keys available for `>> keys <list of keys to type with a ,>`
 
