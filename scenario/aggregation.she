@@ -2,8 +2,8 @@
 # AGREGATOR
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 rm nosuchfile 2>&-
 rm nosuchfile 2>&1 | cat -e
 echo "No dollar character" 1>&2 | cat -e
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

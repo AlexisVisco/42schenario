@@ -13,11 +13,11 @@ import static java.awt.event.KeyEvent.*;
 public class Driver {
 
     private Robot robot;
-    private int delayEnter = 800;
+    private int delayEnter = 1000;
 
     public Driver() throws AWTException {
         this.robot = new Robot();
-        robot.setAutoDelay(5);
+        robot.setAutoDelay(10);
     }
 
     public Driver(Robot robot) {

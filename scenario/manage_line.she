@@ -2,7 +2,7 @@
 # GESTION LIGNE COMMAND
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 >> wait 1500
     %
 >> keys ENTER
@@ -16,4 +16,4 @@ f fu 2g
 'ls'
 "ls"
 "l"s
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

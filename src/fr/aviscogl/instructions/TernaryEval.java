@@ -13,7 +13,8 @@ public class TernaryEval implements Instruction {
     public void execution(Options funOpts) {
         int expr = funOpts.args.group(1).equals(funOpts.args.group(2)) ? 3 : 4;
         if (funOpts.args.group(expr).equals("_")) funOpts.canExecuteLine = false;
-        else funOpts.line = funOpts.args.group(expr);
+        funOpts.vf.add(funOpts.args.group(expr));
+        funOpts.canExecuteLine = false;
     }
 
     @Override

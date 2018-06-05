@@ -2,7 +2,7 @@
 # Inhibiteurs
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 echo "
 hello world"
 echo '
@@ -10,4 +10,4 @@ hello planet'
 ls && \
 echo "hoy" \
 && echo "hello 42sh"
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

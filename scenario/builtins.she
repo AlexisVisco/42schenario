@@ -2,7 +2,7 @@
 # BUILTINS PART
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 echo It works
 cd /tmp
 /bin/pwd
@@ -14,4 +14,4 @@ cd ..
 cd
 /bin/pwd
 cd -
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

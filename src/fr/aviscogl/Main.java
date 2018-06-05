@@ -19,7 +19,6 @@ public class Main {
         System.out.println("42Schenario > Start in 5 seconds");
         try {
             System.getProperties().forEach((k, v) -> VariableCreator.variables.put((String)k, (String)v));
-            System.out.println(VariableCreator.variables);
             Thread.sleep(5 * 1000);
             for (String arg : args) {
                 if (!new File(arg).exists()) {

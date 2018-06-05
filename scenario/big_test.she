@@ -2,7 +2,7 @@
 # BIG TESTS
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
 cd .. && rm -rf test
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

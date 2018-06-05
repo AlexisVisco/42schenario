@@ -2,8 +2,8 @@
 # LOGICAL OPERATORS
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 ls -l && ls
 ls something || ls
 ls || ls something
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

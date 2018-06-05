@@ -10,7 +10,7 @@ You can pass option with java: `-Dvalgrind=true`
 | ------------- |-------------|
 | #`<text>`| Comment |
 | `<text>`%| Enter text without typing enter |
-| >> import <file path> | Import a file in the current file|
+| >> import `<file path>` | Import a file in the current file|
 | >> keys <list of keys to type with a `,`> | Execute combo keys |
 | >> repeat `<number>` <list of keys to type with a `,`> | Repeating combo keys |
 | >> setDelay `<number>` | Set the delay between each keys typed |

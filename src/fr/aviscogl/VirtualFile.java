@@ -37,4 +37,8 @@ public class VirtualFile {
                 this.file.addFirst(s);
         } else throw new FileNotFoundException();
     }
+
+    public void add(String text) {
+        file.addFirst(text);
+    }
 }

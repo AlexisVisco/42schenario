@@ -2,7 +2,7 @@
 # BACKQUOTES
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 echo `ls -l`
 `echo caca` prout
 `echo ls`
@@ -11,4 +11,4 @@ echo `ls -l`
 `echo `echo ls``
 `rm t || echo ls`
 `rm t && echo ls`
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit

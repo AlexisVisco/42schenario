@@ -2,7 +2,7 @@
 # LOCAL VARIABLES
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
->> {launched} == true ? _ : wait 5000
+>> {launched} == true ? _ : >> wait 5000
 test=123
 variables
 typeof test
@@ -22,4 +22,4 @@ env | grep new
 env
 
 /usr/bin/env
->> {can_exit} == true ? exit : _
+>> {can_exit} == false ? _ : exit
