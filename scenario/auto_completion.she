@@ -20,4 +20,4 @@ pyth%
 >> keys CTRL,u
 >> keys ENTER
 >> setDelay 5
-> {can_exit} == false ? _ : exit
+>> {can_exit} == false ? _ : exit

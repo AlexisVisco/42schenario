@@ -8,7 +8,9 @@ echo `ls -l`
 `echo ls`
 `touch t` `rm t`
 `touch t` `rm t ` ls -la
-`echo `echo ls``
+`echo` echo ls``
 `rm t || echo ls`
 `rm t && echo ls`
+```echo  "`echo '1'` + `echo '2'`" | bc```
+echo  "`echo '1'` + `echo '2'`" | bc
 >> {can_exit} == false ? _ : exit

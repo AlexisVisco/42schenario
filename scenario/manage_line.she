@@ -16,4 +16,5 @@ f fu 2g
 'ls'
 "ls"
 "l"s
+\ls
 >> {can_exit} == false ? _ : exit
