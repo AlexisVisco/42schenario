@@ -17,7 +17,7 @@ public class Driver {
 
     public Driver() throws AWTException {
         this.robot = new Robot();
-        robot.setAutoDelay(10);
+        robot.setAutoDelay(5);
     }
 
     public Driver(Robot robot) {
