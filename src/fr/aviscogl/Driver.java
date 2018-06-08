@@ -270,6 +270,11 @@ public class Driver {
 
         robot.keyPress(keyCodes[offset]);
         doType(keyCodes, offset + 1, length - 1);
+        try {
+            Thread.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         robot.keyRelease(keyCodes[offset]);
     }
 
