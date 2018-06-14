@@ -3,14 +3,14 @@
 #
 echo "C'est parti ! \n"
 ./42sh
->> wait 2000
+>> wait {wait}
 foo
 /bin/ls
 /bin/ls -laF
 /bin/ls -l -a -F
 exit
 
->> wait 32000
+>> wait {wait}
 #
 #
 # Les builtins
@@ -28,15 +28,15 @@ cd -
 /bin/pwd
 exit
 
->> wait 52000
+>> wait {wait}
 #
 #
 # La gestion de l'environnement
 #
 #
-echo "On passe maintenant a la gestion de l'environnement ! \n"
+echo "Gestion de l'environnement \n"
 ./42sh
->> wait 2000
+>> wait {wait}
 env
 setenv FOO=bar
 /usr/bin/env | grep FOO
@@ -45,10 +45,86 @@ env | grep FOO
 unsetenv FOO
 env
 exit
->> wait 52000
+>> wait {wait}
 #
 #
-# La gestion de l'environnement
+# La gestion du path
 #
 #
-echo "Cette partie est a faire a la main ! \n"
+echo "Gestion du PATH \n"
+setenv PATH_TMP=$PATH
+unsetenv PATH
+setenv PATH=/bin:/usr/bin
+ls
+emacs
+>> keys CTRL, x
+>> keys CTRL, c
+
+unsetenv PATH
+ls
+emacs
+/bin/ls
+/usr/bin/emacs
+>> keys CTRL, x
+>> keys CTRL, c
+setenv PATH=$PATH_TMP
+
+#
+# Gestion de la ligne de commande
+#
+>> wait {wait}
+echo "Gestion de la ligne de commande \n"
+
+ %
+
+                                  %
+
+
+                          ls                      -l             -a
+>> wait {wait}
+
+#
+# Pipe
+#
+>> wait {wait}
+
+echo "Pipe \n"
+ls | cat -e
+ls | sort | cat -e
+base64 /dev/urandom | head -c 1000
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'"
+
+>> wait {wait}
+
+#
+# Testing redirections
+#
+
+./42sh
+>> wait {wait}
+echo "Testing redirections," > /tmp/test.txt
+echo "with multiple lines" >> /tmp/test.txt
+wc -c < /tmp/test.txt
+
+
+>> wait {wait}
+
+#
+# Operateurs logiques
+#
+echo "Operateurs logiques \n"
+
+>> wait {wait}
+ls -l && ls
+ls something || ls
+ls || ls something
+
+ls -1; touch test_file; ls -1
+rm test_file
+
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+cd .. ; rm -fr test
+
+

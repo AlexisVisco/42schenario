@@ -1,0 +1,23 @@
+#
+# ENV
+#
+>> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
+>> {launched} == true ? _ : >> wait 5000
+
+setenv PATH_TMP=$PATH
+unsetenv PATH
+setenv PATH=/bin:/usr/bin
+ls
+emacs
+>> keys CTRL, x
+>> keys CTRL, c
+>> wait 100
+unsetenv PATH
+ls
+emacs
+/bin/ls
+/usr/bin/emacs
+>> keys CTRL, x
+>> keys CTRL, c
+>> wait 100
+setenv PATH=$PATH_TMP

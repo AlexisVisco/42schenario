@@ -4,10 +4,10 @@
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : >> wait 5000
 >> wait 1500
-    %
->> keys ENTER
+                                          %
+
          %
->> keys ENTER
+
 ;;; || ''
 ::
 hjcbwshoifuveybe8f32r76t362u7edjkssd

@@ -11,4 +11,12 @@
 >> keys CTRL,u
 !?echo
 >> keys CTRL,u
+history
+history help
+history -e ls
+history
+>> wait 100
+history -r test.out
+cat test.out
+>> wait 100
 >> {can_exit} == false ? _ : exit

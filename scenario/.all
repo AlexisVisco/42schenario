@@ -2,22 +2,46 @@
 >> can_exit = false
 
 >> {valgrind} == true ? valgrind --leak-check=full --show-leak-kinds=all ./42sh : ./42sh
->> import aggregation.she
->> import auto_completion.she
->> import auto_completion.she
->> import backquote.she
->> import big_test.she
+
+>> wait 1000
+
+echo "\n-------------------- MANDATORY PART --------------------"
+echo "\nLes builtins"
 >> import builtins.she
->> import manage_line.she
+echo "\nGestion de l'environnement"
 >> import env.she
->> import heredoc.she
->> import history.she
->> import inib.she
->> import line_edit.she
->> import logical_operators.she
+echo "\nGestion du PATH"
+>> import path.she
+echo "\nGestion de la ligne de commande"
+>> import manage_line.she
+echo "\nPipe"
 >> import pipe.she
+echo "\nRedirections simple"
 >> import redir.she
+echo "\nLogical operators"
+>> import logical_operators.she
+echo "\nSeparateur"
 >> import separator.she
+echo "\nA lil bit of everything"
+>> import big_test.she
+echo "\n-------------------- BONUS PART --------------------"
+echo "\nInhibiteurs"
+>> import inib.she
+echo "\nHeredoc"
+>> import heredoc.she
+echo "\nAggregation des file descriptors de sortie"
+>> import aggregation.she
+echo "\nEdition de ligne"
+>> import line_edit.she
+echo "\nBack quotes"
+>> import backquote.she
+echo "\nVariables locales"
 >> import variables.she
+echo "\nHistorique"
+>> import history.she
+echo "\nAutocompletion"
+>> import auto_completion.she
+
+echo "\nVous pouvez maintenant faire vos propres tests !"
 
 exit
