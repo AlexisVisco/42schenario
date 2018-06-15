@@ -209,9 +209,9 @@ public class Driver {
             case '*':
                 return new int[]{VK_SHIFT, VK_8};
             case '(':
-                return new int[]{VK_LEFT_PARENTHESIS};
+                return new int[]{VK_SHIFT, VK_9};
             case ')':
-                return new int[]{VK_RIGHT_PARENTHESIS};
+                return new int[]{VK_SHIFT, VK_0};
             case '_':
                 return new int[]{VK_SHIFT, VK_MINUS};
             case '+':
