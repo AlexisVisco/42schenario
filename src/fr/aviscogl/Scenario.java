@@ -11,7 +11,7 @@ import java.io.IOException;
 
 class Scenario {
 
-    public static void executeScenario(String arg) throws IOException, AWTException {
+    public static void executeScenario(String arg) throws IOException, AWTException, InterruptedException {
         Driver driver = new Driver();
         VirtualFile virtualFile = new VirtualFile(new File(arg));
 
@@ -23,6 +23,7 @@ class Scenario {
                 driver.type(options.line);
                 driver.enter();
             }
+            Thread.sleep(200);
         }
     }
 }

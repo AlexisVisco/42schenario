@@ -16,7 +16,13 @@ history help
 history -e ls
 history
 >> wait 100
-history -r test.out
+history -w test.out
 cat test.out
+>> wait 100
+history -r auteur
+history
+>> wait 100
+history -c
+history
 >> wait 100
 >> {can_exit} == false ? _ : exit

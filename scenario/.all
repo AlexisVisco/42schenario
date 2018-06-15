@@ -1,5 +1,6 @@
 >> launched = true
 >> can_exit = false
+>> time = 3000
 
 >> {valgrind} == true ? valgrind --leak-check=full --show-leak-kinds=all ./42sh : ./42sh
 
@@ -8,39 +9,59 @@
 echo "\n-------------------- MANDATORY PART --------------------"
 echo "\nLes builtins"
 >> import builtins.she
+>> wait {time}
 echo "\nGestion de l'environnement"
 >> import env.she
+>> wait {time}
 echo "\nGestion du PATH"
 >> import path.she
+>> wait {time}
 echo "\nGestion de la ligne de commande"
 >> import manage_line.she
+>> wait {time}
 echo "\nPipe"
 >> import pipe.she
+>> wait {time}
 echo "\nRedirections simple"
 >> import redir.she
+>> wait {time}
 echo "\nLogical operators"
 >> import logical_operators.she
+>> wait {time}
 echo "\nSeparateur"
 >> import separator.she
+>> wait {time}
 echo "\nA lil bit of everything"
 >> import big_test.she
+>> wait {time}
 echo "\n-------------------- BONUS PART --------------------"
 echo "\nInhibiteurs"
 >> import inib.she
+>> wait {time}
 echo "\nHeredoc"
 >> import heredoc.she
+>> wait {time}
 echo "\nAggregation des file descriptors de sortie"
 >> import aggregation.she
+>> wait {time}
 echo "\nEdition de ligne"
 >> import line_edit.she
+>> wait {time}
 echo "\nBack quotes"
 >> import backquote.she
+>> wait {time}
 echo "\nVariables locales"
 >> import variables.she
+>> wait {time}
 echo "\nHistorique"
 >> import history.she
+>> wait {time}
 echo "\nAutocompletion"
 >> import auto_completion.she
+>> wait {time}
+echo "\nBonuses"
+>> import bonuses.she
+>> wait {time}
 
 echo "\nVous pouvez maintenant faire vos propres tests !"
 

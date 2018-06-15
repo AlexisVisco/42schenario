@@ -207,7 +207,7 @@ public class Driver {
             case '&':
                 return new int[]{VK_SHIFT, VK_7};
             case '*':
-                return new int[]{VK_ASTERISK};
+                return new int[]{VK_SHIFT, VK_8};
             case '(':
                 return new int[]{VK_LEFT_PARENTHESIS};
             case ')':

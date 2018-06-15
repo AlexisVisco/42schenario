@@ -1,11 +1,43 @@
 #
-# PIPE
+# BONUSES
 #
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : >> wait 5000
-ls | cat -e
-ls | sort | cat -e
-base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
-base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
-base64 /dev/urandom | head -c 1000 | grep 42 | wc -l | sed -e 's/1/Yes/g' -e 's/0/No/g'
+
+echo "Expression evaluator"
+
+calc
+3 + 2
+0+0
+0*10
+95*2+(10-3)
+-5 * 2
+10 * (7/2 + (5+2))
+7/0
+7%0
+1+9*2+(5/3)+3/0
+3/2*(5/0)
+hjvwufewfw
+a*b
+0+1
+exit
+
+echo "Reverse history"
+echo "123"
+echo "456"
+>> keys CTRL, h
+456
+0
+>> wait 200
+>> keys CTRL, h
+exit
+
+echo "Searchbin"
+searchbin pyth
+searchbin ls
+searchbin l
+searchbin fkejwhfiewk
+
+echo "Environement variable replacement"
+echo $PATH
 >> {can_exit} == false ? _ : exit
