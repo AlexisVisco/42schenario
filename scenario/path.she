@@ -7,6 +7,7 @@
 setenv PATH_TMP=$PATH
 unsetenv PATH
 setenv PATH=/bin:/usr/bin
+>> wait 250
 ls
 emacs
 >> keys CTRL, x

@@ -13,6 +13,7 @@ test_add=$test+18
 typeof test_add
 variables
 unset test_add
+variables
 >> wait 500
 new="Hello world"
 typeof new
