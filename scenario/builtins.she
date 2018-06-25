@@ -4,6 +4,7 @@
 >> {launched} == true ? _ : valgrind --leak-check=full --show-leak-kinds=all ./42sh
 >> {launched} == true ? _ : >> wait 5000
 echo It works
+unsetenv OLDPWD
 cd -
 cd /tmp
 /bin/pwd
